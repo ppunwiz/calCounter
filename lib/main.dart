@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //TODO: 1.login 2.sign up 3.home: link button 4.food list 5.calculate cal 6.calculate history/record 7.alert exceed cal (opt: add food)
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
