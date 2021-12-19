@@ -43,6 +43,8 @@ dependencies:
   path_provider: ^2.0.4
   device_info_plus: ^3.2.0
   uuid: ^3.0.5
+  flutter_clean_calendar: ^1.0.2+1
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

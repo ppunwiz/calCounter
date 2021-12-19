@@ -1,13 +1,10 @@
+import 'package:cal_counter/pages/add_food_page.dart';
 import 'package:cal_counter/pages/calories.dart';
 import 'package:cal_counter/pages/food_page.dart';
-import 'package:cal_counter/pages/login/login_page.dart';
+import 'package:cal_counter/pages/record_view_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'components/bottom_nav_bar.dart';
 import 'components/category_card.dart';
-import 'components/search_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
@@ -61,14 +58,16 @@ class HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 50,),
                   Text(
                     "Hello",
                     style: Theme.of(context)
                         .textTheme
-                        .display1
+                        .headline1
                         .copyWith(fontWeight: FontWeight.w900),
                   ),
-                  const SearchBar(),
+                  SizedBox(height: 150,),
+                  //const SearchBar(),
                   Expanded(
                     child: GridView.count(
                       crossAxisCount: 2,
@@ -99,6 +98,34 @@ class HomePageState extends State<HomePage> {
                               MaterialPageRoute(
                                 builder: (context) {
                                   return const CaloriesPage();
+                                },
+                              ),
+                            );
+                          },
+                        ),
+                        CategoryCard(
+                          title: "Add Food",
+                          img: "assets/icons/add_food.png",
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return AddFoodPage();
+                                },
+                              ),
+                            );
+                          },
+                        ),
+                        CategoryCard(
+                          title: "Record",
+                          img: "assets/icons/calendar.png",
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const RecordViewPage();
                                 },
                               ),
                             );

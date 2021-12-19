@@ -131,7 +131,7 @@ class BodyState extends State<Body> {
     double maxCal = 2000;
     DateTime today = DateTime.now();
     final diff = today.difference(_date).inDays;
-    if(equalsIgnoreCase("females", genderController.text)){
+    if(equalsIgnoreCase("female", genderController.text)){
       if(diff > 18165) maxCal = 1600;
       else if(diff <= 18250) maxCal = 1800;
       else if(diff <= 10950) maxCal = 2000;
@@ -152,7 +152,7 @@ class BodyState extends State<Body> {
     gender: genderController.text, birthdate: _date, maxKCal: maxCal);
 
     Box<User> userBox = Hive.box('users');
-    userBox.put("user", user);
+    userBox.put(emailController.text, user);
     print("saved user");
 
     Navigator.push(

@@ -1,4 +1,5 @@
 library cal_counter.globals;
 
-double kCalLimit;
-DateTime dateTime;
+String deviceId;
+String userId;
+String email;
